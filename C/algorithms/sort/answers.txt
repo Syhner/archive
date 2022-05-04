@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Since sort 2 uses merge sort, sort 1 must use bubble sort since it works in Omega(n) for the sorted sample of 50000 numbers, and outperforms sort 3 which has an Omega(n^2) for the same data set.
+
+sort2 uses: Merge sort
+
+How do you know?: For the large random sample of 50000 numbers, it outperforms bubble sort and selection sort since it works in O(n log n), as opposed to O(n^2) in bubble sort and selection sort.
+
+sort3 uses: Selection
+
+How do you know?: By process of elimination, sort 3 must use selection sort, which can be verified by comparing it's time for the random50000 data set, and seeing that it is approximately equal to sort 1's time on this data set, since they both have an O(n^2).

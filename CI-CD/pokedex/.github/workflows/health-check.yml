@@ -1,0 +1,16 @@
+name: Periodic health check
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  health_check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check health of Heroku app
+        uses: jtalk/url-health-check-action@v2
+        with:
+          url: https://murmuring-meadow-72748.herokuapp.com
+          max-attempts: 3
+          retry-delay: 5s

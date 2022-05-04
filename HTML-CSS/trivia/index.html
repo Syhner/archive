@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+    <script>
+      // Stop checking the answer to the first question upon correct answer
+      let q1answered = false;
+
+      // Run script once DOM is loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        // When correct answer is clicked, change color to green
+        document
+          .querySelector('.correct')
+          .addEventListener('click', function () {
+            this.style.backgroundColor = 'green';
+            document.querySelector('#feedback1').innerHTML = 'Correct!';
+            q1answered = true;
+          });
+
+        // When incorrect answer is clicked, change color to red
+        document.querySelectorAll('.incorrect').forEach(function (i) {
+          i.addEventListener('click', function () {
+            if (!q1answered) {
+              this.style.backgroundColor = 'red';
+              document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+            }
+          });
+        });
+
+        document.querySelector('#check').addEventListener('click', function () {
+          let input = document.querySelector('input');
+
+          if (
+            input.value === 'Tim Berners-Lee' ||
+            input.value === 'Tim Berners Lee'
+          ) {
+            input.style.backgroundColor = 'green';
+            document.querySelector('#feedback2').innerHTML = 'Correct!';
+          } else {
+            input.style.backgroundColor = 'red';
+            document.querySelector('#feedback2').innerHTML = 'Incorrect!';
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <!-- Multiple choice question -->
+        <h3>What is the time complexity of merge sort?</h3>
+
+        <button class="incorrect">O(1)</button>
+        <button class="incorrect">O(log n)</button>
+        <button class="incorrect">O(n)</button>
+        <button class="correct">O(n log n)</button>
+        <button class="incorrect">O(n&sup2;)</button>
+
+        <p id="feedback1"></p>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <!-- Free response question -->
+        <h3>Who invented the World Wide Web?</h3>
+
+        <input type="text" />
+        <button id="check">Check Answer</button>
+
+        <p id="feedback2"></p>
+      </div>
+    </div>
+  </body>
+</html>

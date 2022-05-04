@@ -1,0 +1,59 @@
+Script started on 2022-03-19 21:26:24+01:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="123" LINES="15"]
+]0;syhner@LAPTOP-SHSSN: /mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[01;32msyhner@LAPTOP-SHSSN[00m:[01;34m/mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[00m$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                     NAMES
+254b08753854   mongo     "docker-entrypoint.s…"   6 minutes ago   Up 6 minutes   0.0.0.0:3456->27017/tcp   todo-backend-mongo-1
+]0;syhner@LAPTOP-SHSSN: /mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[01;32msyhner@LAPTOP-SHSSN[00m:[01;34m/mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[00m$ docker exec -it todo-backend-mongo-1 mongo  -u root -p example
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("19bfd19d-0bdc-4bee-b03c-09f9e4337902") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2022-03-19T20:20:16.227+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-03-19T20:20:18.041+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs[3G[Jshow dbs[11G
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+the_database  0.000GB
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+todos
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62363aff2da749f8655e9246"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62363aff2da749f8655e9247"), "text" : "Learn about containers", "done" : false }
+> db.todos.insertOne({ "text" : "Incra[3G[Jdb.todos.insertOne({ "text" : "Incr[38Gease the number of tools in my toolbelt", "done" : false })[3G[Jdb.todos.insertOne({ "text" : "Increase the number of tools in my toolbelt", "done" : false })[97G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("62363cafd98119c3e0fb7212")
+}
+> db.todos.find({})[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("62363aff2da749f8655e9246"), "text" : "Write code", "done" : true }
+{ "_id" : ObjectId("62363aff2da749f8655e9247"), "text" : "Learn about containers", "done" : false }
+{ "_id" : ObjectId("62363cafd98119c3e0fb7212"), "text" : "Increase the number of tools in my toolbelt", "done" : false }
+> exit[3G[Jexit[7G
+bye
+]0;syhner@LAPTOP-SHSSN: /mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[01;32msyhner@LAPTOP-SHSSN[00m:[01;34m/mnt/c/Users/Siraj/Documents/code/fullstackopen-containers[00m$ exit
+exit
+
+Script done on 2022-03-19 21:27:37+01:00 [COMMAND_EXIT_CODE="0"]

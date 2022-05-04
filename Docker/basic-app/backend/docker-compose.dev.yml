@@ -1,0 +1,12 @@
+services:
+  backend:
+    image: my-app-backend-dev
+    container_name: my-app-backend-dev
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 4000:4000

@@ -1,0 +1,13 @@
+.blog {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  margin-top: 10px;
+  outline: solid 1px black;
+}
+
+.blog li {
+  padding-left: 5px;
+  color: darkblue;
+  list-style-type: none;
+}

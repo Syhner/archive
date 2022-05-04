@@ -1,0 +1,37 @@
+{
+  "name": "fullstackopen-sql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/bin/www",
+    "dev": "nodemon src/bin/www",
+    "lint": "eslint .",
+    "migration:up": "node src/util/migration-up",
+    "migration:down": "node src/util/migration-down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syhner/fullstackopen-sql.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syhner/fullstackopen-sql/issues"
+  },
+  "homepage": "https://github.com/syhner/fullstackopen-sql#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.17.0",
+    "umzug": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

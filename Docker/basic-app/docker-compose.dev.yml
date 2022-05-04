@@ -1,0 +1,26 @@
+services:
+  backend:
+    image: my-app-backend-dev
+    container_name: my-app-backend-dev
+    restart: unless-stopped
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./backend/src:/app/src
+    ports:
+      - 4000:4000
+  frontend:
+    image: my-app-frontend-dev
+    container_name: my-app-frontend-dev
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend

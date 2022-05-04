@@ -1,0 +1,21 @@
+{
+  "name": "fullstackopen-pipeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start --prefix server",
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "setup": "cd client && npm i && cd ../server && npm i",
+    "lint": "npm run lint --prefix client && npm run lint --prefix server",
+    "heroku-prebuild": "npm run setup",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.5.2"
+  }
+}

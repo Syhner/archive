@@ -1,0 +1,29 @@
+a {
+  text-decoration: none;
+}
+
+a:hover:not(.nav-link) {
+  text-decoration: underline;
+  color: honeydew;
+}
+
+.highlight {
+  color: yellow;
+}
+
+h1 > span.highlight {
+  font-weight: bold;
+}
+
+body > section {
+  background-color: rgb(89, 153, 226);
+}
+
+#emojis {
+  background-color: rgb(29, 29, 29);
+}
+
+footer {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
